@@ -22,28 +22,21 @@ For CI/CD Fastlane is used.
 - [SwiftLint](https://github.com/realm/SwiftLint)
 - [Scan](https://docs.fastlane.tools/actions/scan/)
 - [Slather](https://github.com/SlatherOrg/slather)
+- [SonarQube](https://www.sonarqube.org/downloads/)
+- [Sonar-swift](https://github.com/Backelite/sonar-swift)
 
 
 ## Library Used
 - [SDWebImage](https://github.com/rs/SDWebImage)
 - [SwiftLint ](https://github.com/realm/SwiftLint)
 
-## TODO
-* Sorting option for user to sort article based popularity, Date, Alphabetically 
-* Refresh articles using pull to refresh or refresh button.
-* Configure fastlane lanes/XcodeServerBot for build creation and provising and certificate managment.
-* Configure Fastlane  lanes for build upload on iTunesConnect.
-
 
 # Installation
 
 * Installation by cloning the repository
-* Go to directory
-* use command + B or Product -> Build to build the project
-* Incase of build fail due to dependency SDWebImageView, install SDWebImageView using CocoaPods.
-* Incase of build fail due to dependency ReachabilitySwift, install ReachabilitySwift using CocoaPods.
-* Press run icon in Xcode or command + R to run the project on Simulator
-
+* Open terminal and navigate to project directory.
+* Run `pod install`
+* Open NYTimesArticles.xcworkspace
 
 ### Fastlane
 
