@@ -63,8 +63,10 @@ Execution:-
 Results:-
 * Build - Archive is created in ~/NYTimesArticles/build-dir.
 * Tests - Test report is generated at `~/NYTimesArticles/fastlane/test_output/report.html`
-* Code Coverage - Code coverage is generated at `~/NYTimesArticles/fastlane/test_output/code_coverage/index.html`
 * Lint - Lint report is generated at `~/NYTimesArticles/fastlane/swiftlint.result.json`
+* Code Coverage - Code coverage is generated at `~/NYTimesArticles/fastlane/test_output/code_coverage/index.html`
+
+![](https://github.com/gaurav-gupta7/Images/blob/master/Screenshot%202019-03-15%20at%2011.08.00%20AM.png)
 
 
 ##  SonarQube Integration
@@ -77,7 +79,7 @@ This is also another tool integrated for check project code health reports.
 * On successful results, open browser and hit `http://localhost:9000/`, 
 * You will see the project analyses, Tap on project analyses it will show detail reports 
 
-
+![](https://raw.githubusercontent.com/gaurav-gupta7/Images/master/Screenshot%202019-03-15%20at%207.20.26%20AM.png)
 
 # Architecture
 
