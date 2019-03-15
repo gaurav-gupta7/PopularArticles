@@ -1,0 +1,66 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Complie lane first installs the pod. Then project is build"
+  lane :integrate do
+  	cocoapods
+    build
+    lint
+    test
+  end
+
+  desc "Unit Testing"
+  lane :test do
+    scan(
+      workspace: "NYTimesArticles.xcworkspace",
+      scheme: "NYTimesArticles",
+      output_directory: "fastlane/test_results/",
+      clean: true,
+      code_coverage: true,
+      device: "iPhone 6s Plus",
+      output_types: "html"
+    )
+    slather(
+      output_directory: "fastlane/test_results/code_coverage/",
+      scheme: "NYTimesArticles",
+      workspace: "NYTimesArticles.xcworkspace",
+      html: true,
+      proj: "NYTimesArticles.xcodeproj"
+      )
+  end
+
+  desc "Build app"
+  lane :build do
+    xcodebuild(
+      archive: true,
+      archive_path: "./build-dir/NYTimesArticles.xcarchive",
+      scheme: "NYTimesArticles",
+      workspace: "NYTimesArticles.xcworkspace"
+    )
+  end
+
+  desc "Analyzes source code"
+  lane :lint do 
+    swiftlint(
+      mode: :lint,      
+      output_file: "fastlane/swiftlint.result.json", 
+      executable: "./Pods/SwiftLint/swiftlint",
+      ignore_exit_status: true
+    )
+  end
+end
